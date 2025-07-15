@@ -1,0 +1,1959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Hire22.ai</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+/* Force red color for Meet Our Team heading, override all previous rules */
+.team-section .team-heading-gap .team-attractive-title.section-title {
+    color: #ff2a2a !important;
+    text-shadow: 0 2px 16px #ff2a2a99 !important;
+}
+/* Ensure red color for Meet Our Team heading in black texture section */
+.team-heading-gap .team-attractive-title {
+    color: #ff2a2a !important;
+}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            backdrop-filter: none;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #f3f4f6 100%);
+            background-attachment: fixed;
+            color: #181c2b;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Enhanced Button Styles with Filling Effect */
+        .btn-fill {
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-fill::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: left 0.5s ease;
+            z-index: -1;
+        }
+
+        .btn-fill:hover::before {
+            left: 0;
+        }
+
+        .btn-fill-reverse::before {
+            background: linear-gradient(135deg, #f093fb 0%, #53a0fd 100%);
+            left: 100%;
+        }
+
+        .btn-fill-reverse:hover::before {
+            left: 0;
+        }
+
+        /* Header - Enhanced with Better Fonts */
+        .header {
+            background: #2a2d32;
+            backdrop-filter: blur(10px);
+            border: none;
+            padding: 0;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            background: #222428;
+            border-radius: 0 0 32px 32px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+        }
+
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover {
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            background: #111111;
+            padding: 16px 40px;
+            border-radius: 0 0 32px 32px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+        }
+
+        .nav-menu a {
+            font-family: 'Inter', sans-serif;
+            color: #f5f5f5;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(.4,0,.2,1);
+            position: relative;
+            padding: 10px 22px;
+            border: 1px solid transparent;
+            border-radius: 24px;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #f093fb 0%, #53a0fd 100%);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-menu a:hover {
+            color: #ffd700;
+            border-color: #ffd700;
+            background: #222222;
+            box-shadow: 0 2px 16px rgba(255,215,0,0.08);
+        }
+
+        .nav-menu a:hover::after {
+            width: 80%;
+        }
+
+        .employer-zone-btn {
+            background: rgba(255, 255, 255, 0.1) !important;
+            color: white !important;
+            border: 2px solid rgba(255, 255, 255, 0.3) !important;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .employer-zone-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
+            transition: left 0.4s ease;
+            z-index: -1;
+        }
+
+        .employer-zone-btn:hover::before {
+            left: 0;
+        }
+
+        .employer-zone-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5) !important;
+        }
+
+        /* Hero Section with Images */
+        .hero-section {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(240, 248, 255, 0.1) 100%);
+            backdrop-filter: blur(10px);
+            border: none;
+            padding: 0;
+            color: white;
+            position: relative;
+            overflow: visible;
+            border-radius: 0;
+            margin: 0;
+            box-shadow: none;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 52px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            color: rgba(255, 255, 255, 0.95);
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .hero-content p {
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 400;
+            transform: translateY(30px);
+            opacity: 0;
+        }
+
+        .cta-button {
+            font-family: 'Poppins', sans-serif;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            padding: 18px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            display: inline-block;
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
+            transition: left 0.5s ease;
+            z-index: -1;
+        }
+
+        .cta-button:hover::before {
+            left: 0;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* AI Brain with Image Background */
+        .ai-container {
+            perspective: 1000px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transform: scale(0.8);
+            position: relative;
+        }
+
+        .ai-brain {
+            width: 350px;
+            height: 350px;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: rotate3d 25s linear infinite;
+            background: url('https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=400&fit=crop&crop=center') center/cover;
+            border-radius: 50%;
+            opacity: 0.3;
+        }
+
+        .brain-sphere {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 3px solid;
+            border-radius: 50%;
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        .brain-sphere:nth-child(1) {
+            border-color: rgba(255, 255, 255, 0.6);
+            transform: rotateX(0deg) rotateY(0deg);
+            animation-delay: 0s;
+        }
+
+        .brain-sphere:nth-child(2) {
+            border-color: rgba(240, 147, 251, 0.6);
+            transform: rotateX(60deg) rotateY(60deg);
+            animation-delay: 0.5s;
+        }
+
+        .brain-sphere:nth-child(3) {
+            border-color: rgba(83, 160, 253, 0.6);
+            transform: rotateX(120deg) rotateY(120deg);
+            animation-delay: 1s;
+        }
+
+        .neural-network {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .neuron {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        .neuron:nth-child(1) { 
+            top: 20%; left: 30%; 
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+            animation-delay: 0s; 
+        }
+        .neuron:nth-child(2) { 
+            top: 40%; right: 25%; 
+            background: rgba(240, 147, 251, 0.8);
+            box-shadow: 0 0 20px rgba(240, 147, 251, 0.8);
+            animation-delay: 0.3s; 
+        }
+        .neuron:nth-child(3) { 
+            bottom: 30%; left: 40%; 
+            background: rgba(83, 160, 253, 0.8);
+            box-shadow: 0 0 20px rgba(83, 160, 253, 0.8);
+            animation-delay: 0.6s; 
+        }
+        .neuron:nth-child(4) { 
+            top: 60%; left: 20%; 
+            background: rgba(196, 113, 245, 0.8);
+            box-shadow: 0 0 20px rgba(196, 113, 245, 0.8);
+            animation-delay: 0.9s; 
+        }
+        .neuron:nth-child(5) { 
+            bottom: 20%; right: 30%; 
+            background: rgba(118, 75, 162, 0.8);
+            box-shadow: 0 0 20px rgba(118, 75, 162, 0.8);
+            animation-delay: 1.2s; 
+        }
+
+        @keyframes rotate3d {
+            0% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+            100% { transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.7; }
+            50% { transform: scale(1.15); opacity: 1; }
+        }
+
+        @keyframes glow {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.3); }
+        }
+
+        /* About Section with Images */
+        .about-section {
+            padding: 72px 0 56px 0;
+            background: none;
+            border-radius: 0;
+            margin: 0 auto;
+            box-shadow: none;
+            max-width: 1400px;
+            border: none;
+            backdrop-filter: none;
+        }
+
+        .aboutus-flex {
+            display: flex;
+            gap: 56px;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: stretch;
+            flex-wrap: wrap;
+        }
+
+        .aboutus-left {
+            flex: 1 1 520px;
+            min-width: 320px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 32px;
+        }
+
+        .aboutus-right {
+            flex: 1 1 420px;
+            min-width: 320px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 32px;
+        }
+        .aboutus-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 64px;
+            font-weight: 900;
+            margin-bottom: 18px;
+            color: #181c2b;
+            text-align: left;
+            transition: color 0.04s;
+            cursor: pointer;
+        }
+        .aboutus-title:hover {
+            color: rgba(0,0,0,0) !important;
+            -webkit-text-fill-color: rgba(0,0,0,0) !important;
+            -webkit-text-stroke: 2px #ff4d6d;
+            text-decoration: underline;
+            text-decoration-color: #ff4d6d;
+            text-decoration-thickness: 4px;
+            text-underline-offset: 8px;
+            transition: color 0.04s, -webkit-text-stroke 0.04s, -webkit-text-fill-color 0.04s;
+        }
+        .aboutus-title-bold {
+            color: #181c2b;
+        }
+        .aboutus-title-accent {
+            color: #764ba2;
+        }
+        .aboutus-subtitle {
+            font-family: 'Poppins', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #181c2b;
+            margin-bottom: 28px;
+            text-align: left;
+        }
+        .aboutus-desc {
+            font-family: 'Inter', sans-serif;
+            font-size: 20px;
+            color: #181c2b;
+            margin-bottom: 38px;
+            line-height: 1.7;
+            text-align: left;
+        }
+        .aboutus-trust {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 18px;
+            margin-bottom: 0;
+        }
+        .aboutus-card {
+            position: relative;
+            width: 480px;
+            max-width: 100%;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 8px 40px rgba(67,126,234,0.08);
+            background: #fff;
+        }
+        .aboutus-card-img {
+            width: 100%;
+            height: 340px;
+            object-fit: cover;
+            display: block;
+            border: 4px solid #ffd700;
+            box-shadow: 0 0 24px 0 rgba(255, 215, 0, 0.25);
+            transition: box-shadow 0.18s, border-color 0.18s;
+        }
+        .aboutus-card-img:hover {
+            box-shadow: 0 0 48px 8px rgba(255, 215, 0, 0.45);
+            border-color: #ffd700;
+        }
+        .aboutus-card-overlay {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background: linear-gradient(0deg, rgba(24,90,157,0.85) 0%, rgba(24,90,157,0.0) 100%);
+            color: #fff;
+            padding: 32px 28px 18px 28px;
+        }
+        .aboutus-card-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .aboutus-card-desc {
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+            font-weight: 400;
+        }
+        .aboutus-card-icon {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            background: #f3f0ff;
+            border-radius: 50%;
+            padding: 8px;
+            box-shadow: 0 2px 8px rgba(67,126,234,0.08);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 48px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #181c2b;
+            text-shadow: none;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .section-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+            text-align: center;
+            color: #181c2b;
+            margin-bottom: 60px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0;
+            transform: translateY(20px);
+            font-weight: 400;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(248, 250, 255, 0.1) 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 40px 30px;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(50px);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+            transition: left 0.6s ease;
+            z-index: -1;
+        }
+
+        .feature-card:hover::before {
+            left: 0;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .feature-image {
+            width: 100%;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card:nth-child(1) .feature-image {
+            background-image: url('https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=200&fit=crop&crop=center');
+        }
+
+        .feature-card:nth-child(2) .feature-image {
+            background-image: url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=200&fit=crop&crop=center');
+        }
+
+        .feature-card:nth-child(3) .feature-image {
+            background-image: url('https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=200&fit=crop&crop=center');
+        }
+
+        .feature-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.3) 0%, rgba(240, 147, 251, 0.3) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .feature-card:hover .feature-image::before {
+            opacity: 1;
+        }
+
+        .feature-card h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .feature-card p {
+            font-family: 'Inter', sans-serif;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(240, 147, 251, 0.1) 50%, rgba(83, 160, 253, 0.1) 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 100px 0;
+            border-radius: 50px;
+            margin: 50px 20px;
+            box-shadow: 0 20px 60px rgba(24,90,157,0.05);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(248, 250, 255, 0.1) 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+            transition: left 0.5s ease;
+            z-index: -1;
+        }
+
+        .stat-card:hover::before {
+            left: 0;
+        }
+
+        .stat-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .stat-number {
+            font-family: 'Poppins', sans-serif;
+            font-size: 48px;
+            font-weight: 800;
+            display: block;
+            margin-bottom: 10px;
+            color: rgba(255, 255, 255, 0.95);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .stat-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+        }
+
+        /* Chat Section with Enhanced Buttons */
+        .chat-section {
+            background: none;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: visible;
+            margin: 0;
+            border-radius: 0;
+            box-shadow: none;
+            border: none;
+            animation: none;
+        }
+
+        .chat-section.scrolled-highlight {
+            background: linear-gradient(135deg, #f8fafc 0%, #43cea2 100%) !important;
+            transition: background 0.6s cubic-bezier(.4,0,.2,1);
+        }
+
+        .chat-highlight-bg {
+            position: absolute;
+            left: 50%;
+            top: 50px;
+            transform: translateX(-50%);
+            width: 0;
+            height: 220px;
+            background: linear-gradient(90deg, #43cea2 0%, #f8fafc 100%);
+            border-radius: 32px;
+            opacity: 0;
+            z-index: 0;
+            transition: none;
+            box-shadow: 0 8px 32px rgba(67,206,162,0.12);
+        }
+
+        .chat-container {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Removed chatPulse animation for blending */
+
+        .chat-btn {
+            background: linear-gradient(90deg, #ff6a00 0%, #ee0979 100%) !important;
+            color: #fff !important;
+            border: 2px solid #fff !important;
+            box-shadow: 0 4px 24px rgba(238,9,121,0.12);
+            transition: transform 0.3s cubic-bezier(.4,0,.2,1), box-shadow 0.3s cubic-bezier(.4,0,.2,1);
+        }
+
+        .chat-btn:hover {
+            transform: scale(1.08) rotate(-2deg);
+            box-shadow: 0 8px 32px rgba(255,106,0,0.18);
+            background: linear-gradient(90deg, #ee0979 0%, #ff6a00 100%) !important;
+            color: #ffd700 !important;
+            border-color: #ffd700 !important;
+        }
+
+        /* Removed chat-section::before for blending */
+
+        /* Removed shimmer animation for blending */
+
+        .chat-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .chat-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 52px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 30px;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            opacity: 0;
+            transform: translateY(30px);
+            min-height: 62px;
+            letter-spacing: 1px;
+            border-right: 3px solid #fff;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .chat-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .chat-btn {
+            font-family: 'Poppins', sans-serif;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 20px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.4s ease;
+            min-width: 200px;
+            justify-content: center;
+            opacity: 0;
+            transform: translateY(20px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chat-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
+            transition: left 0.5s ease;
+            z-index: -1;
+        }
+
+        .chat-btn:hover::before {
+            left: 0;
+        }
+
+        .chat-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            border-color: rgba(255, 255, 255, 0.6);
+        }
+
+        .chat-subtitle {
+            font-family: 'Inter', sans-serif;
+            color: rgba(255,255,255,0.9);
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            opacity: 0;
+            transform: translateY(15px);
+            font-weight: 400;
+        }
+
+        /* Team Section with Images */
+        .team-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #f8fafc 0%, #f3f4f6 100%);
+    backdrop-filter: none;
+    border: none;
+    border-radius: 0;
+    margin: 0 auto;
+    box-shadow: none;
+        }
+
+        /* Team Section Typography */
+        .team-section .section-title {
+    font-family: 'Poppins', cursive, sans-serif;
+    font-size: 64px !important;
+    font-weight: 900 !important;
+    color: #181c2b !important;
+    letter-spacing: 2px;
+    text-shadow: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: color 0.18s, text-shadow 0.18s, text-decoration 0.18s;
+    cursor: pointer;
+        }
+        .team-section .section-title:hover {
+            color: #43cea2;
+            text-decoration: underline;
+            text-decoration-color: #43cea2;
+            text-decoration-thickness: 4px;
+            text-underline-offset: 8px;
+            text-shadow: 0 0 32px #43cea2, 0 2px 18px rgba(67,198,172,0.55);
+        }
+        .team-section .section-subtitle {
+            font-family: 'Inter', serif, sans-serif;
+            font-weight: 500;
+            color: #43cea2;
+            letter-spacing: 1px;
+        }
+        .team-card .team-name {
+            font-family: 'Poppins', cursive, sans-serif;
+            font-weight: 800;
+            color: #185a9d;
+            letter-spacing: 1px;
+        }
+        .team-card .team-role {
+            font-family: 'Inter', serif, sans-serif;
+            font-weight: 600;
+            color: #43cea2;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .team-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(248, 250, 255, 0.1) 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 30px;
+            border-radius: 25px;
+            text-align: center;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+            transition: left 0.6s ease;
+            z-index: -1;
+        }
+
+        .team-card:hover::before {
+            left: 0;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .team-image {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    background-size: cover;
+    background-position: center;
+    background-color: #fff;
+    border: 2px solid #e3e6ee;
+    box-shadow: 0 2px 12px rgba(67,126,234,0.10);
+    transition: all 0.4s ease, box-shadow 0.4s;
+        }
+
+        .team-card:hover .team-image {
+            border-color: #43cea2;
+            transform: scale(1.1);
+            box-shadow: 0 0 32px 8px #43cea2, 0 8px 32px rgba(67,206,162,0.18);
+        }
+
+        .team-name {
+            font-family: 'Poppins', sans-serif;
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .team-role {
+            font-family: 'Inter', sans-serif;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        /* Footer Enhanced */
+        .footer {
+            background: #111111;
+            backdrop-filter: none;
+            border: none;
+            padding: 60px 0 20px;
+            box-shadow: 0 -10px 30px rgba(0,0,0,0.18);
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h4 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .footer-section a {
+            font-family: 'Inter', sans-serif;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-section a::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.5);
+            transition: width 0.3s ease;
+        }
+
+        .footer-section a:hover::before {
+            width: 100%;
+        }
+
+        .footer-section a:hover {
+            color: rgba(255, 255, 255, 0.95);
+            transform: translateX(5px);
+        }
+
+        .footer-section p {
+            font-family: 'Inter', sans-serif;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .contact-btn {
+            font-family: 'Poppins', sans-serif;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            padding: 12px 24px;
+            border-radius: 20px;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 10px;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
+            transition: left 0.4s ease;
+            z-index: -1;
+        }
+
+        .contact-btn:hover::before {
+            left: 0;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .app-icons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .app-icon {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .app-icon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
+            transition: left 0.4s ease;
+            z-index: -1;
+        }
+
+        .app-icon:hover::before {
+            left: 0;
+        }
+
+        .app-icon:hover {
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-bottom-left {
+            font-family: 'Inter', sans-serif;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+        }
+
+        .footer-bottom-right {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .footer-bottom-right a {
+            font-family: 'Inter', sans-serif;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom-right a:hover {
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-icon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
+            transition: left 0.4s ease;
+            z-index: -1;
+        }
+
+        .social-icon:hover::before {
+            left: 0;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Floating Elements */
+        .floating-element {
+            position: absolute;
+            font-size: 30px;
+            opacity: 0.15;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .floating-element:nth-child(1) {
+            top: 15%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-element:nth-child(2) {
+            top: 70%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .floating-element:nth-child(3) {
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-25px) rotate(180deg); }
+        }
+
+        /* Floating Images for Chat Section */
+        .floating-image {
+            position: absolute;
+            opacity: 0.85;
+            z-index: 1;
+            pointer-events: none;
+            transition: transform 0.5s cubic-bezier(.4,0,.2,1), opacity 0.5s;
+        }
+        .floating-image img {
+            width: 96px;
+            height: 96px;
+            display: block;
+        }
+        .floating-image-left {
+            top: 12%;
+            left: 4%;
+            transform: rotate(-18deg) scale(1.2);
+        }
+        .floating-image-right {
+            top: 65%;
+            right: 4%;
+            transform: rotate(18deg) scale(1.2);
+        }
+        .floating-image-center {
+            bottom: 12%;
+            left: 50%;
+            transform: translateX(-50%) rotate(-12deg) scale(1.2);
+        }
+        /* Pop-in animation for images */
+        .floating-image.pop {
+            opacity: 1;
+            transform: scale(1.2) rotate(0deg);
+        }
+
+        /* Chat Button Images on Hover */
+        .chat-btn-wrapper img {
+            filter: drop-shadow(0 8px 32px rgba(67,206,162,0.18));
+        }
+        .chat-btn-wrapper .chat-btn-img.show {
+            opacity: 1 !important;
+            transform:translateY(-50%) scale(1.1) rotate(-8deg);
+        }
+        .chat-btn-wrapper .call-btn-img.show {
+            opacity: 1 !important;
+            transform:translateY(-50%) scale(1.1) rotate(8deg);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            .chat-title, .section-title {
+                font-size: 36px;
+            }
+            .hero-content h1 {
+                font-size: 36px;
+            }
+            .chat-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 40px;
+            }
+            .ai-brain {
+                width: 280px;
+                height: 280px;
+            }
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+            .about-section, .stats-section, .chat-section, .team-section {
+                margin: 0;
+                border-radius: 0;
+            }
+        }
+
+        .hero-title,
+.hero-text,
+.chat-title,
+.chat-subtitle,
+.team-section .section-subtitle,
+.team-card .team-name,
+.team-card .team-role {
+    color: #181c2b !important;
+    text-shadow: none !important;
+}
+
+.team-section .section-title,
+.team-section .section-subtitle,
+.team-card .team-name,
+.team-card .team-role {
+    color: #181c2b !important;
+    text-shadow: none !important;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="#" class="logo">
+                <img src="assets/hire22-logo.svg" alt="Hire22 Logo" style="height:40px; vertical-align:middle;">
+            </a>
+            <nav class="nav-menu">
+                <a href="#" class="btn-fill">Why Hire22.ai</a>
+                <a href="#" class="btn-fill">About Us</a>
+                <a href="#" class="btn-fill">Login</a>
+                <a href="#" class="btn-fill">Register</a>
+                <a href="#" class="employer-zone-btn btn-fill">Employer Zone</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+
+    <main class="main-content">
+        <!-- About Section (moved to top) -->
+        <section class="about-section">
+            <div class="aboutus-flex">
+                <div class="aboutus-left">
+                    <h2 class="aboutus-title">
+                        <span class="aboutus-title-bold">About</span> <span class="aboutus-title-accent">Us</span>
+                    </h2>
+                    <h3 class="aboutus-subtitle">India's First Anonymous Executive Job Portal</h3>
+                    <p class="aboutus-desc">Top executives need privacy when exploring new opportunities. Traditional job boards expose your career moves to current employers and competitors.<br><br>We've built a secure platform where senior professionals can discover roles anonymously, protecting their reputation while opening doors to better opportunities.</p>
+                    <div class="aboutus-trust">
+                        <span class="aboutus-trust-icon" style="background:#eafaf1;border-radius:50%;padding:8px;display:inline-block;margin-right:8px;"><img src="https://cdn-icons-png.flaticon.com/512/3602/3602123.png" alt="trust" style="width:32px;height:32px;vertical-align:middle;"></span>
+                        <span class="aboutus-trust-badge" style="color:#1abc9c;font-weight:600;font-size:18px;vertical-align:middle;"><span style="font-size:22px;vertical-align:middle;">✔</span> Trusted by 15,000+ executives</span>
+                    </div>
+                </div>
+                <div class="aboutus-right">
+                    <div class="aboutus-card">
+                        <img src="assets/pic.png" alt="Our Mission" class="aboutus-card-img">
+                        <div class="aboutus-card-overlay">
+                            <div class="aboutus-card-title">Our Mission</div>
+                            <div class="aboutus-card-desc">Connecting talent with opportunity, privately and efficiently</div>
+                        </div>
+                        <div class="aboutus-card-icon">
+                            <img src="https://cdn-icons-png.flaticon.com/512/3602/3602123.png" alt="team" style="width:48px;height:48px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-container" style="position:relative;width:100vw;max-width:100%;overflow:hidden;">
+                <div style="position:absolute;top:0;left:0;width:100vw;height:700px;object-fit:cover;opacity:0.18;z-index:1;pointer-events:none;">
+                    <img src="assets/pic1.png" alt="Hero Background" style="width:100vw;height:700px;object-fit:cover;">
+                </div>
+                <div class="hero-content" style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:700px;width:100vw;">
+                    <h1 class="hero-title" style="font-size:64px;font-weight:900;text-align:center;line-height:1.1;color:#181c2b;margin-top:48px;">Revolutionizing Recruitment with AI</h1>
+                    <p class="hero-text" style="font-size:22px;font-weight:500;text-align:center;color:#181c2b;margin-top:32px;max-width:700px;">India's first anonymous job connect platform powered by advanced AI technology. Connect with top employers while maintaining complete privacy until you choose to reveal your identity.</p>
+                    <a href="#" class="cta-button btn-fill" style="margin-top:38px;display:none;">Get Started Today</a>
+                    <!-- Promo Tag Overlay -->
+                    <div class="promo-tag" style="display:inline-flex;align-items:center;gap:18px;padding:18px 38px;margin-top:260px;border-radius:32px;background:#fff;box-shadow:0 4px 24px rgba(67,126,234,0.10);font-size:28px;font-weight:700;color:#181c2b;cursor:pointer;position:relative;transition:box-shadow 0.3s;">
+                        Get it on
+                        <a href="https://play.google.com/store/apps/details?id=com.hire22.app" target="_blank" style="display:inline-flex;align-items:center;gap:6px;text-decoration:none;">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" style="height:32px;width:auto;background:#fff;border-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,0.08);padding:2px;">
+                        </a>
+                        <a href="#" style="display:inline-flex;align-items:center;gap:6px;text-decoration:none;">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple Store" style="height:28px;width:28px;">
+                        </a>
+                        <!-- Promotion image popup -->
+                        <img src="assets/promotion.png" alt="Promotion" class="promo-phone-img" style="display:none;position:absolute;top:-560px;left:50%;transform:translateX(-50%);width:480px;height:auto;box-shadow:0 0 192px 72px #43cea2,0 0 96px 48px #43cea2,0 8px 32px rgba(67,206,162,0.45);filter:blur(1.2px) brightness(1.22);border-radius:44px;z-index:30;transition:opacity 0.3s,box-shadow 0.3s,filter 0.3s;opacity:0;pointer-events:none;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <!-- ...existing code... -->
+
+        <!-- Team Section -->
+        <section class="team-section" style="padding-top:0;">
+            <div class="team-heading-gap" style="width:100vw;max-width:100%;background:#181c2b url('assets/black-texture.png') repeat top center;padding-top:0;padding-bottom:0;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;">
+                <!-- Flickering glitters -->
+                <div class="glitter-container" style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:2;">
+                    <!-- Teal/cyan grid dots, static -->
+                    <div class="glitter" style="top:16px;left:32px;"></div>
+                    <div class="glitter" style="top:16px;left:96px;"></div>
+                    <div class="glitter" style="top:16px;left:160px;"></div>
+                    <div class="glitter" style="top:16px;left:224px;"></div>
+                    <div class="glitter" style="top:16px;left:288px;"></div>
+                    <div class="glitter" style="top:48px;left:64px;"></div>
+                    <div class="glitter" style="top:48px;left:128px;"></div>
+                    <div class="glitter" style="top:48px;left:192px;"></div>
+                    <div class="glitter" style="top:48px;left:256px;"></div>
+                    <div class="glitter" style="top:80px;left:32px;"></div>
+                    <div class="glitter" style="top:80px;left:96px;"></div>
+                    <div class="glitter" style="top:80px;left:160px;"></div>
+                    <div class="glitter" style="top:80px;left:224px;"></div>
+                    <div class="glitter" style="top:80px;left:288px;"></div>
+                    <div class="glitter" style="top:112px;left:64px;"></div>
+                    <div class="glitter" style="top:112px;left:128px;"></div>
+                    <div class="glitter" style="top:112px;left:192px;"></div>
+                    <div class="glitter" style="top:112px;left:256px;"></div>
+                </div>
+        /* Static teal/cyan grid glitter effect for black band */
+        .glitter-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 2;
+        }
+        .glitter {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #43cea2 70%, #00ffe7 100%);
+            opacity: 0.85;
+            box-shadow: 0 0 8px 2px #43cea2, 0 0 2px 1px #00ffe7;
+        }
+                <!-- Black band fully connects pic1 and pic2 -->
+                <h2 class="section-title team-attractive-title team-heading-hover" style="margin-bottom:0px;font-family:'Bebas Neue', 'Poppins', cursive, sans-serif;font-size:72px;font-weight:900;letter-spacing:3px;text-transform:uppercase;position:relative;z-index:1;transition:box-shadow 0.3s,background 0.3s;color:#ff2a2a;">Meet Our Team</h2>
+                <p class="section-subtitle" style="margin-bottom:0px;position:relative;z-index:1;">Passionate professionals driving innovation in AI-powered recruitment</p>
+            </div>
+        <!-- ...existing code... -->
+            <div style="position:relative;width:100vw;max-width:100%;overflow:hidden;">
+                <div style="position:absolute;top:0;left:0;width:100vw;height:700px;object-fit:cover;opacity:0.16;z-index:1;pointer-events:none;">
+                    <img src="assets/pic2.png" alt="Team Background" style="width:100vw;height:700px;object-fit:cover;">
+                </div>
+                <div class="container" style="position:relative;z-index:2;">
+                    <div class="team-grid">
+                        <div class="team-card">
+                            <div class="team-image" style="background-image:url('assets/ceo-11.jpg');"></div>
+                            <div class="team-name" style="color:#181c2b;font-weight:800;display:flex;align-items:center;justify-content:center;gap:8px;">
+                                Founder & CEO
+                                <a href="https://www.linkedin.com/in/alexjohnson" target="_blank" style="margin-left:4px;vertical-align:middle;display:inline-flex;align-items:center;">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" style="width:18px;height:18px;vertical-align:middle;filter:none;display:block;">
+                                </a>
+                            </div>
+                            <div class="team-role">Alex Johnson</div>
+                            <div class="team-desc" style="color:#181c2b;margin-top:18px;font-size:18px;line-height:1.6;">Visionary entrepreneur leading Hire22 to redefine executive job search. Alex blends strategic insight with a passion for privacy-first technology, empowering professionals to connect with top opportunities securely.</div>
+                        </div>
+                        <div class="team-card">
+                            <div class="team-image" style="background-image:url('assets/techhead-11.jpg');"></div>
+                            <div class="team-name" style="color:#181c2b;font-weight:800;display:flex;align-items:center;justify-content:center;gap:8px;">
+                                Engineering Head
+                                <a href="https://www.linkedin.com/in/sarahchen" target="_blank" style="margin-left:4px;vertical-align:middle;display:inline-flex;align-items:center;">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" style="width:18px;height:18px;vertical-align:middle;filter:none;display:block;">
+                                </a>
+                            </div>
+                            <div class="team-role">Sarah Chen</div>
+                            <div class="team-desc" style="color:#181c2b;margin-top:18px;font-size:18px;line-height:1.6;">Sarah drives innovation at Hire22, architecting robust AI solutions and scalable platforms. Her expertise in cloud and full-stack development ensures seamless, secure experiences for all users.</div>
+                        </div>
+                        <div class="team-card">
+                            <div class="team-image" style="background-image:url('assets/devops-11.jpg');"></div>
+                            <div class="team-name" style="color:#181c2b;font-weight:800;display:flex;align-items:center;justify-content:center;gap:8px;">
+                                Products & Technology Head <a href="https://www.linkedin.com/in/michaelrodriguez" target="_blank" style="margin-left:0px;vertical-align:middle;display:inline-flex;align-items:center;position:relative;top:0px;">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" style="width:18px;height:18px;vertical-align:middle;filter:none;display:inline-block;">
+                                </a>
+                            </div>
+                            <div class="team-role">Michael Rodriguez</div>
+                            <div class="team-desc" style="color:#181c2b;margin-top:18px;font-size:18px;line-height:1.6;">Michael champions product excellence and technology leadership at Hire22. He specializes in building high-performance teams and delivering innovative solutions for modern recruitment challenges.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Let's Chat Section -->
+        <section class="chat-section">
+            <div class="chat-container">
+                <h1 class="chat-title">Let me help you ..</h1>
+                <div class="chat-buttons">
+                    <div class="chat-btn-wrapper" style="position:relative;display:inline-block;">
+                        <a href="#" class="chat-btn btn-fill" id="chatBtn">
+                            💬 Chat with Us
+                        </a>
+                    </div>
+                    <div class="chat-btn-wrapper" style="position:relative;display:inline-block;">
+                        <a href="#" class="chat-btn btn-fill-reverse" id="callBtn">
+                            📞 Call Us
+                        </a>
+                    </div>
+                </div>
+                <p class="chat-subtitle">We're here to help you with your hiring journey. Reach out via chat or call for instant support!</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Need help?</h4>
+                    <a href="mailto:support@hire22.ai">support@hire22.ai</a>
+                    <p>+91 888 45 333 45</p>
+                    <a href="#" class="contact-btn btn-fill">Contact Us</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Information</h4>
+                    <a href="#" class="btn-fill">About us</a>
+                    <a href="#" class="btn-fill">Blog</a>
+                    <a href="#" class="btn-fill">Anonymous Policy</a>
+                    <a href="#" class="btn-fill">Sitemap</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Candidate zone</h4>
+                    <a href="#" class="btn-fill">How it works</a>
+                    <div class="app-icons">
+                        <a href="https://play.google.com/store/apps/details?id=com.hire22.app" target="_blank" class="app-icon btn-fill" style="padding:0;display:flex;align-items:center;justify-content:center;">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Google_Play_2016_icon.svg" alt="Google Play" style="height:28px;width:28px;background:#fff;border-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,0.08);padding:2px;">
+                        </a>
+                        <a href="#" class="app-icon btn-fill" style="padding:0;display:flex;align-items:center;justify-content:center;">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple Store" style="height:24px;width:24px;background:#fff;border-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,0.08);padding:2px;">
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Employer zone</h4>
+                    <a href="#" class="btn-fill">Register to Hire</a>
+                    <a href="#" class="btn-fill">How it works for Employers</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-left">
+                    © 2025 Hire22.ai
+                </div>
+                <div class="footer-bottom-right">
+                    <a href="#" class="btn-fill">Privacy Policy</a>
+                    <a href="#" class="btn-fill">Terms & Conditions</a>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon btn-fill">f</a>
+                        <a href="#" class="social-icon btn-fill">𝕏</a>
+                        <a href="#" class="social-icon btn-fill">in</a>
+                        <a href="#" class="social-icon btn-fill">📺</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // GSAP Animations
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Promo phone popup effect
+        document.addEventListener('DOMContentLoaded', function() {
+            var promoTag = document.querySelector('.promo-tag');
+            var promoImg = document.querySelector('.promo-phone-img');
+            if (promoTag && promoImg) {
+                promoTag.addEventListener('mouseenter', function() {
+                    promoImg.style.display = 'block';
+                    setTimeout(function() {
+                        promoImg.style.opacity = '1';
+                        promoImg.style.boxShadow = '0 0 192px 64px #43cea2,0 0 96px 48px #43cea2,0 8px 32px rgba(67,206,162,0.45)';
+                        promoImg.style.filter = 'blur(0.5px) brightness(1.25)';
+                    }, 10);
+                });
+                promoTag.addEventListener('mouseleave', function() {
+                    promoImg.style.opacity = '0';
+                    promoImg.style.boxShadow = '0 0 128px 48px #43cea2,0 0 64px 32px #43cea2,0 8px 32px rgba(67,206,162,0.38)';
+                    promoImg.style.filter = 'blur(1.5px) brightness(1.15)';
+                    setTimeout(function() {
+                        promoImg.style.display = 'none';
+                    }, 300);
+                });
+            }
+        });
+
+        // Hero section animations
+        gsap.timeline({ delay: 0.3 })
+            .to(".hero-title", {
+                duration: 1,
+                y: 0,
+                opacity: 1,
+                ease: "power3.out"
+            })
+            .to(".hero-text", {
+                duration: 0.8,
+                y: 0,
+                opacity: 1,
+                ease: "power3.out"
+            }, "-=0.5")
+            .to(".cta-button", {
+                duration: 0.8,
+                y: 0,
+                opacity: 1,
+                ease: "power3.out"
+            }, "-=0.3")
+            .to(".ai-container", {
+                duration: 1,
+                scale: 1,
+                opacity: 1,
+                ease: "power3.out"
+            }, "-=0.8");
+
+        // Chat section fade-in and upward animation on scroll
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: ".chat-section",
+                start: "top 85%",
+                toggleActions: "play none none reverse"
+            }
+        })
+        .from(".chat-section", {
+            duration: 1,
+            opacity: 0,
+            y: 60,
+            ease: "power3.out"
+        })
+        .to(".chat-title", {
+            duration: 0.1,
+            opacity: 1,
+            y: 0,
+            ease: "power3.out",
+            onComplete: function() {
+                // Typing animation for chat-title
+                const chatTitle = document.querySelector('.chat-title');
+                const fullText = "Let me help you ..";
+                let i = 0;
+                chatTitle.textContent = "";
+                chatTitle.style.borderRight = "3px solid #fff";
+                function typeWriter() {
+                    if (i <= fullText.length) {
+                        chatTitle.textContent = fullText.substring(0, i);
+                        i++;
+                        setTimeout(typeWriter, 90);
+                    } else {
+                        chatTitle.style.borderRight = "none";
+                    }
+                }
+                typeWriter();
+            }
+        })
+        .to(".chat-btn", {
+            duration: 0.8,
+            y: 0,
+            opacity: 1,
+            stagger: 0.2,
+            ease: "power3.out"
+        }, "-=0.5")
+        .to(".chat-subtitle", {
+            duration: 0.8,
+            y: 0,
+            opacity: 1,
+            ease: "power3.out"
+        }, "-=0.3");
+
+        // Stats section animations
+        gsap.to(".stats-title", {
+            duration: 0.8,
+            y: 0,
+            opacity: 1,
+            ease: "power3.out",
+            scrollTrigger: {
+                trigger: ".stats-section",
+                start: "top 80%",
+                toggleActions: "play none none reverse"
+            }
+        });
+
+        gsap.to(".stat-card", {
+            duration: 0.8,
+            scale: 1,
+            opacity: 1,
+            stagger: 0.15,
+            ease: "power3.out",
+            scrollTrigger: {
+                trigger: ".stats-grid",
+                start: "top 80%",
+                toggleActions: "play none none reverse"
+            }
+        });
+
+        // Team section animations
+        gsap.to(".team-card", {
+            duration: 0.8,
+            y: 0,
+            opacity: 1,
+            stagger: 0.2,
+            ease: "power3.out",
+            scrollTrigger: {
+                trigger: ".team-grid",
+                start: "top 80%",
+                toggleActions: "play none none reverse"
+            }
+        });
+
+        // Chat section animations
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: ".chat-section",
+                start: "top 80%",
+                toggleActions: "play none none reverse"
+            }
+        })
+        .to(".chat-title", {
+            duration: 0.1,
+            opacity: 1,
+            y: 0,
+            ease: "power3.out",
+            onComplete: function() {
+                // Typing animation for chat-title
+                const chatTitle = document.querySelector('.chat-title');
+                const fullText = "Let me help you ..";
+                let i = 0;
+                chatTitle.textContent = "";
+                chatTitle.style.borderRight = "3px solid #fff";
+                function typeWriter() {
+                    if (i <= fullText.length) {
+                        chatTitle.textContent = fullText.substring(0, i);
+                        i++;
+                        setTimeout(typeWriter, 90);
+                    } else {
+                        chatTitle.style.borderRight = "none";
+                    }
+                }
+                typeWriter();
+            }
+        })
+        .to(".chat-btn", {
+            duration: 0.8,
+            y: 0,
+            opacity: 1,
+            stagger: 0.2,
+            ease: "power3.out"
+        }, "-=0.5")
+        .to(".chat-subtitle", {
+            duration: 0.8,
+            y: 0,
+            opacity: 1,
+            ease: "power3.out"
+        }, "-=0.3");
+
+        // Floating images pop-in animation on chat section scroll
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: ".chat-section",
+                start: "top 80%",
+                toggleActions: "play none none reverse"
+            }
+        })
+        .to(".floating-image-left", {
+            duration: 0.7,
+            opacity: 1,
+            scale: 1.2,
+            rotation: 0,
+            ease: "back.out(1.7)"
+        })
+        .to(".floating-image-right", {
+            duration: 0.7,
+            opacity: 1,
+            scale: 1.2,
+            rotation: 0,
+            ease: "back.out(1.7)"
+        }, "-=0.5")
+        .to(".floating-image-center", {
+            duration: 0.7,
+            opacity: 1,
+            scale: 1.2,
+            rotation: 0,
+            ease: "back.out(1.7)"
+        }, "-=0.5");
+
+        // Enhanced button hover animations with GSAP
+        document.querySelectorAll('.btn-fill, .btn-fill-reverse').forEach(btn => {
+            btn.addEventListener('mouseenter', () => {
+                gsap.to(btn, {
+                    duration: 0.3,
+                    scale: 1.05,
+                    ease: "power2.out"
+                });
+            });
+            
+            btn.addEventListener('mouseleave', () => {
+                gsap.to(btn, {
+                    duration: 0.3,
+                    scale: 1,
+                    ease: "power2.out"
+                });
+            });
+        });
+
+        // Card hover animations
+        document.querySelectorAll('.feature-card, .stat-card, .team-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                gsap.to(card, {
+                    duration: 0.3,
+                    scale: 1.02,
+                    ease: "power2.out"
+                });
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                gsap.to(card, {
+                    duration: 0.3,
+                    scale: 1,
+                    ease: "power2.out"
+                });
+            });
+        });
+
+        // Parallax effect for background
+        gsap.to("body", {
+            backgroundPosition: "50% 100%",
+            ease: "none",
+            scrollTrigger: {
+                trigger: "body",
+                start: "top bottom",
+                end: "bottom top",
+                scrub: true
+            }
+        });
+
+        // Show chat/call images on button hover
+        document.getElementById('chatBtn').addEventListener('mouseenter', function() {
+            document.querySelector('.chat-btn-img').classList.add('show');
+        });
+        document.getElementById('chatBtn').addEventListener('mouseleave', function() {
+            document.querySelector('.chat-btn-img').classList.remove('show');
+        });
+        document.getElementById('callBtn').addEventListener('mouseenter', function() {
+            document.querySelector('.call-btn-img').classList.add('show');
+        });
+        document.getElementById('callBtn').addEventListener('mouseleave', function() {
+            document.querySelector('.call-btn-img').classList.remove('show');
+        });
+
+        // Add highlight background element to chat-section
+        const chatSection = document.querySelector('.chat-section');
+        if (chatSection && !document.querySelector('.chat-highlight-bg')) {
+            const highlight = document.createElement('div');
+            highlight.className = 'chat-highlight-bg';
+            chatSection.appendChild(highlight);
+        }
+        // Animate highlight background on scroll
+        if (window.gsap && window.ScrollTrigger) {
+            gsap.registerPlugin(ScrollTrigger);
+            gsap.set('.chat-highlight-bg', { width: 0, opacity: 0 });
+            ScrollTrigger.create({
+                trigger: ".chat-section",
+                start: "top 80%",
+                end: "bottom 20%",
+                onEnter: () => {
+                    gsap.to('.chat-highlight-bg', {
+                        duration: 0.8,
+                        width: "600px",
+                        opacity: 1,
+                        ease: "power2.out"
+                    });
+                },
+                onLeaveBack: () => {
+                    gsap.to('.chat-highlight-bg', {
+                        duration: 0.6,
+                        width: 0,
+                        opacity: 0,
+                        ease: "power2.in"
+                    });
+                },
+                onLeave: () => {
+                    gsap.to('.chat-highlight-bg', {
+                        duration: 0.6,
+                        width: 0,
+                        opacity: 0,
+                        ease: "power2.in"
+                    });
+                },
+                onEnterBack: () => {
+                    gsap.to('.chat-highlight-bg', {
+                        duration: 0.8,
+                        width: "600px",
+                        opacity: 1,
+                        ease: "power2.out"
+                    });
+                }
+            });
+        }
+    </script>
+</body>
+</html>
