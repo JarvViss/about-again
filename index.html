@@ -1371,6 +1371,117 @@
     text-shadow: none !important;
 }
 
+        /* Hamburger styles */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            z-index: 1100;
+            background: none;
+            border: none;
+            outline: none;
+        }
+        .hamburger span {
+            height: 4px;
+            width: 28px;
+            background: #fff;
+            margin: 4px 0;
+            border-radius: 2px;
+            transition: 0.3s;
+            display: block;
+        }
+        /* Hamburger open state */
+        .hamburger.active span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+        /* Responsive Navbar */
+        @media (max-width: 900px) {
+            .header-container {
+                flex-wrap: wrap;
+                padding: 0 10px;
+            }
+            .nav-menu {
+                position: absolute;
+                top: 70px;
+                right: 10px;
+                left: 10px;
+                background: #181c2b;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0;
+                padding: 0;
+                border-radius: 18px;
+                box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+                display: none;
+                width: auto;
+                min-width: 180px;
+                z-index: 1001;
+            }
+            .nav-menu.open {
+                display: flex;
+            }
+            .nav-menu a {
+                width: 100%;
+                padding: 18px 24px;
+                border-radius: 0;
+                border-bottom: 1px solid #232323;
+                font-size: 18px;
+            }
+            .nav-menu a:last-child {
+                border-bottom: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .chat-section {
+                padding: 40px 0 30px 0;
+            }
+            .chat-title {
+                font-size: 22px;
+                min-height: 32px;
+            }
+            .chat-buttons {
+                flex-direction: column;
+                gap: 18px;
+                background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+                border-radius: 18px;
+                padding: 24px 8px 24px 8px;
+                margin-bottom: 18px;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                max-width: 350px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .chat-btn {
+                padding: 20px 40px;
+                font-size: 16px;
+                min-width: 200px;
+                border-radius: 50px;
+                margin: 0;
+                box-shadow: 0 2px 8px rgba(67,206,162,0.10);
+            }
+            .chat-btn-wrapper {
+                margin: 0;
+            }
+            .chat-subtitle {
+                font-size: 13px;
+                margin-top: 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1380,7 +1491,12 @@
             <a href="#" class="logo">
                 <img src="assets/hire22-logo.svg" alt="Hire22 Logo" style="height:40px; vertical-align:middle;">
             </a>
-            <nav class="nav-menu">
+            <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav-menu" id="navMenu">
                 <a href="#" class="btn-fill">Why Hire22.ai</a>
                 <a href="#" class="btn-fill">About Us</a>
                 <a href="#" class="btn-fill">Login</a>
@@ -1586,7 +1702,7 @@
                     <a href="#" class="btn-fill">How it works</a>
                     <div class="app-icons">
                         <a href="https://play.google.com/store/apps/details?id=com.hire22.app" target="_blank" class="app-icon btn-fill" style="padding:0;display:flex;align-items:center;justify-content:center;">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Google_Play_2016_icon.svg" alt="Google Play" style="height:28px;width:28px;background:#fff;border-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,0.08);padding:2px;">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" style="height:24px;width:auto;background:#fff;border-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,0.08);padding:2px;">
                         </a>
                         <a href="#" class="app-icon btn-fill" style="padding:0;display:flex;align-items:center;justify-content:center;">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple Store" style="height:24px;width:24px;background:#fff;border-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,0.08);padding:2px;">
@@ -1954,6 +2070,25 @@
                 }
             });
         }
+
+        // Hamburger menu toggle
+        const hamburger = document.getElementById('hamburgerBtn');
+        const navMenu = document.getElementById('navMenu');
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('open');
+            hamburger.setAttribute('aria-expanded', navMenu.classList.contains('open'));
+        });
+        // Optional: Close menu when clicking a link (mobile UX)
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 900) {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('open');
+                    hamburger.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
     </script>
 </body>
 </html>
